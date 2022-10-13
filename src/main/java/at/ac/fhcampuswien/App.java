@@ -123,16 +123,10 @@ public class App {
         int note = scanner.nextInt();
 
         int zaehler = 1, fuenfer=0;
-        double sum = note, av=0;
-
-        if(note==5) {
-            fuenfer++;
-        }
+        double sum = 0, av=0;
 
         while (note != 0) {
             zaehler++;
-            System.out.print("Mark " + zaehler + ": ");
-            note = scanner.nextInt();
             sum = sum + note;
             if(note==5) {
                 fuenfer++;
@@ -140,8 +134,10 @@ public class App {
             if (note > 5 || note < 0) {
                 System.out.println("Invalid mark!");
                 sum = sum - note;
-            zaehler--;
-                }
+                zaehler--;
+            }
+            System.out.print("Mark " + zaehler + ": ");
+            note = scanner.nextInt();
             }
 
         if(sum!=0){
@@ -151,7 +147,6 @@ public class App {
         System.out.printf("%,.2f", av);
         System.out.println();
         System.out.println("Negative marks: "+fuenfer);
-        //code gefunden am 03.10.22 auf https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Format-double-Java-printf-example#:~:text=Just%20use%20%25.,double%20to%20two%20decimal%20places.
     }
 
     //todo Task 6 - fertig
